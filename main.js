@@ -13,7 +13,6 @@
       let node_film = new Node(judul);
       graph.addNode(node_film);
       
-
       pemain.forEach(item2 => {
         let node_aktor = graph.getNode(item2);
         if(node_aktor === undefined){
@@ -22,8 +21,9 @@
         graph.addNode(node_aktor);
         node_film.addEdges(node_aktor);
       });
-
     });
+
+    console.log(graph);
 
 
     const akhir = graph.setEnd("Frances Lee McCain");
@@ -35,12 +35,12 @@
 
     while(antrian.length > 0){
       let node_sekarang = antrian.shift();
-
       if(node_sekarang == akhir){
         break;
       }
 
       let edges = node_sekarang.edges;
+
       edges.forEach(item => {
         let neighbor = item;
         if(!neighbor.searched){
@@ -68,12 +68,6 @@
         txt += ' => ';
       }
     }
-    console.log(txt);
-    console.log(path);
-    console.log(akhir);
     document.querySelector('.isi').innerHTML = txt;
   });
-
-
-  
 })();

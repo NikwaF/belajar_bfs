@@ -1,7 +1,7 @@
 const Graph = require('./graph');
 const Node = require('./node');
 const fs = require('fs');
-let data = JSON.parse(fs.readFileSync('kevin_bacon.json'));
+let data = JSON.parse(fs.readFileSync('artis.json'));
 
 const movies = data.movies;
 const graph = new Graph();
